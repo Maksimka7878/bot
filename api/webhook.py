@@ -51,6 +51,14 @@ async def cmd_arzumanov(message: types.Message):
     await message.bot.send_message(ADMIN_ID, "Добавлен новый лид ✅")
 
 
+@dp.message(Command("keep"))
+async def cmd_keep(message: types.Message):
+    await message.bot.send_message(126445299, " Добавлен новый лид ✅")
+    await message.bot.send_message(259980067, " Добавлен новый лид ✅")
+    await message.bot.send_message(158200687, " Добавлен новый лид ✅")
+    await message.bot.send_message(ADMIN_ID, "Добавлен новый лид ✅")
+
+
 async def process_update(update_data: dict):
     # Создаём Bot внутри async-функции, чтобы сессия открывалась в нужном loop
     bot = Bot(token=TOKEN)
