@@ -6,6 +6,7 @@ from http.server import BaseHTTPRequestHandler
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 
+# Токен и ID администратора (рекомендуется хранить в переменных окружения Vercel)
 TOKEN = os.environ.get("BOT_TOKEN", "8329966485:AAE-MIlK3wT704TOfKpCkify-2U4qUshI1o")
 ADMIN_ID = int(os.environ.get("ADMIN_ID", "5732894871"))
 
@@ -59,6 +60,7 @@ async def cmd_keep(message: types.Message):
 
 
 async def process_update(update_data: dict):
+    # Создаём Bot внутри async-функции, чтобы сессия открывалась в нужном loop
     bot = Bot(token=TOKEN)
     try:
         update = types.Update(**update_data)
@@ -71,14 +73,18 @@ class handler(BaseHTTPRequestHandler):
     def do_POST(self):
         content_length = int(self.headers.get("Content-Length", 0))
         body = self.rfile.read(content_length)
+
         try:
             update_data = json.loads(body.decode("utf-8"))
+
+            # Создаём новый event loop для каждого serverless-запроса Vercel
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             try:
                 loop.run_until_complete(process_update(update_data))
             finally:
                 loop.close()
+
             self.send_response(200)
             self.end_headers()
             self.wfile.write(b"OK")
