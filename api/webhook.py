@@ -6,7 +6,7 @@ import asyncio
 from functools import partial
 from http.server import BaseHTTPRequestHandler
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.dirname(__file__))
 
 import aiohttp
 from aiogram import Bot, Dispatcher, types, F
