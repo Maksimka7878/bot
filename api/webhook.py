@@ -35,6 +35,7 @@ async def cmd_wb(message: types.Message):
 async def cmd_inc_tan(message: types.Message):
     await message.bot.send_message(215933351, " Добавлен новый лид ✅")
     await message.bot.send_message(342343624, " Добавлен новый лид ✅")
+    await message.bot.send_message(338809503, " Добавлен новый лид ✅")
     await message.bot.send_message(ADMIN_ID, "Добавлен новый лид ✅")
 
 
@@ -42,6 +43,13 @@ async def cmd_inc_tan(message: types.Message):
 async def cmd_inc_vik(message: types.Message):
     await message.bot.send_message(215933351, " Добавлен новый лид ✅")
     await message.bot.send_message(5043021562, " Добавлен новый лид ✅")
+    await message.bot.send_message(338809503, " Добавлен новый лид ✅")
+    await message.bot.send_message(ADMIN_ID, "Добавлен новый лид ✅")
+
+
+@dp.message(Command("inct_vik_rop"))
+async def cmd_inct_vik_rop(message: types.Message):
+    await message.bot.send_message(338809503, " Добавлен новый лид ✅")
     await message.bot.send_message(ADMIN_ID, "Добавлен новый лид ✅")
 
 
