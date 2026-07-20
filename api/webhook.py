@@ -66,6 +66,12 @@ async def cmd_arzumanov(message: types.Message):
     await message.bot.send_message(ADMIN_ID, "Добавлен новый лид ✅")
 
 
+@dp.message(Command("natal_strun"))
+async def cmd_natal_strun(message: types.Message):
+    await message.bot.send_message(260581609, " Добавлен новый лид ✅")
+    await message.bot.send_message(ADMIN_ID, "Добавлен новый лид ✅")
+
+
 @dp.message(Command("keep"))
 async def cmd_keep(message: types.Message):
     await message.bot.send_message(126445299, " Добавлен новый лид ✅")
