@@ -80,6 +80,22 @@ async def cmd_keep(message: types.Message):
     await message.bot.send_message(ADMIN_ID, "Добавлен новый лид ✅")
 
 
+@dp.message(Command("keep_b"))
+async def cmd_keep_b(message: types.Message):
+    await message.bot.send_message(126445299, " Добавлен новый бизнес лид ✅")
+    await message.bot.send_message(259980067, " Добавлен новый бизнес лид ✅")
+    await message.bot.send_message(158200687, " Добавлен новый бизнес лид ✅")
+    await message.bot.send_message(ADMIN_ID, "Добавлен новый бизнес лид ✅")
+
+
+@dp.message(Command("keep_p"))
+async def cmd_keep_p(message: types.Message):
+    await message.bot.send_message(126445299, " Добавлен новый премиум лид ✅")
+    await message.bot.send_message(259980067, " Добавлен новый премиум лид ✅")
+    await message.bot.send_message(158200687, " Добавлен новый премиум лид ✅")
+    await message.bot.send_message(ADMIN_ID, "Добавлен новый премиум лид ✅")
+
+
 async def process_update(update_data: dict):
     # Создаём Bot внутри async-функции, чтобы сессия открывалась в нужном loop
     bot = Bot(token=TOKEN)
